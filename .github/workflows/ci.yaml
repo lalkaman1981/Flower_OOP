@@ -25,3 +25,6 @@ jobs:
           JAVA_FILE_NAME: checkstyle.xml
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots package
+      - name: Super-linter
+        uses: super-linter/super-linter@v7.1.0 # x-release-please-version
+        
