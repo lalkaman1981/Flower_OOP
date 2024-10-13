@@ -9,10 +9,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class Store {
-    Map<Class<? extends ShopItem>, List<ShopItem>> itemMap = new HashMap<>();
+    Map<Class< ? extends ShopItem>, List<ShopItem>> itemMap = new HashMap<>();
 
     public void add(ShopItem item) {
-        Class<? extends ShopItem> item_type = item.getClass();
+        Class< ? extends ShopItem> item_type = item.getClass();
         itemMap.putIfAbsent(item_type, new ArrayList<>());
         itemMap.get(item_type).add(item);
     }
@@ -36,7 +36,7 @@ public class Store {
         return items;
     }
 
-    private void simpleSearch(List<ShopItem> items, Class<? extends ShopItem> cls) {
+    private void simpleSearch(List<ShopItem> items, Class< ? extends ShopItem> cls) {
         List<ShopItem> flowers = itemMap.get(cls);
         if (flowers != null) {
             for (ShopItem flower : flowers) {
