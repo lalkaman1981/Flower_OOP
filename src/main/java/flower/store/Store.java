@@ -85,7 +85,7 @@ public class Store {
         }
 
         public Map<Class<
-        ? extends ShopItem>,List<ShopItem>> getItemMap() {
+        ? extends ShopItem>, List<ShopItem>> getItemMap() {
                 return itemMap;
         }
 
