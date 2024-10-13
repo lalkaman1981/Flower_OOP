@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Assertions;
 
 class StoreTest {
 
+    private static final double INITIAL_FLOWER_PRICE = 10.0;
+    private static final int INITIAL_QUANTITY = 5;
+
     private Store store;
     private Flower flower;
     private FlowerPack flowerPack;
@@ -18,13 +21,12 @@ class StoreTest {
     void setUp() {
         store = new Store();
         flower = new Flower();
-        double price = 10.0;
         flower.setPrice(
-                price);
+                INITIAL_FLOWER_PRICE);
 
         flowerPack = new FlowerPack(
                 flower,
-                5);
+                INITIAL_QUANTITY);
         flowerBucket = new FlowerBucket();
 
         store.add(
