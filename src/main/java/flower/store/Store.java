@@ -25,28 +25,28 @@ public class Store {
         for (String word : words) {
             lower = word.toLowerCase();
             switch (lower) {
-                case "flower" -> simpleSearch(items, Flower.class);
-                case "bucket", "flowerbucket" ->
-                    simpleSearch(items, FlowerBucket.class);
-                case "pack", "flowerpack" ->
-                    simpleSearch(items, FlowerPack.class);
-                default -> {
-                }
+            case "flower" -> simpleSearch(items, Flower.class);
+            case "bucket", "flowerbucket" -> simpleSearch(items,
+                    FlowerBucket.class);
+            case "pack", "flowerpack" -> simpleSearch(items, FlowerPack.class);
+            default -> {
+            }
             }
         }
 
         return items;
     }
 
-    private void simpleSearch(List<ShopItem> items, Class<? extends ShopItem> cls) {
+    private void simpleSearch(List<ShopItem> items,
+            Class<? extends ShopItem> cls) {
         List<ShopItem> flowers = itemMap.get(cls);
         if (flowers != null) {
             for (ShopItem flower : flowers) {
                 items.add(flower);
             }
         } else {
-            System.out.println("No items found for the class: " +
-                    cls.getSimpleName());
+            System.out.println(
+                    "No items found for the class: " + cls.getSimpleName());
         }
     }
 
@@ -61,7 +61,8 @@ public class Store {
         return itemMap;
     }
 
-    public void setItemMap(Map<Class<? extends ShopItem>, List<ShopItem>> newItemMap) {
+    public void setItemMap(
+            Map<Class<? extends ShopItem>, List<ShopItem>> newItemMap) {
         this.itemMap = newItemMap;
     }
 }

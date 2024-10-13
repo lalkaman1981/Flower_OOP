@@ -7,7 +7,8 @@ class FlowerTypeTest {
 
     @Test
     void testFlowerTypeValues() {
-        FlowerType[] expectedTypes = { FlowerType.CHAMOMILE, FlowerType.ROSE, FlowerType.TULIP };
+        FlowerType[] expectedTypes = { FlowerType.CHAMOMILE, FlowerType.ROSE,
+                FlowerType.TULIP };
         assertArrayEquals(expectedTypes, FlowerType.values());
     }
 
@@ -20,9 +21,11 @@ class FlowerTypeTest {
 
     @Test
     void testInvalidFlowerType() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
+        IllegalArgumentException thrown = assertThrows(
+                IllegalArgumentException.class,
                 () -> FlowerType.valueOf("INVALID"));
 
-        assertEquals("No enum constant flower.store.FlowerType.INVALID", thrown.getMessage());
+        assertEquals("No enum constant flower.store.FlowerType.INVALID",
+                thrown.getMessage());
     }
 }

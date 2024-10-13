@@ -19,11 +19,15 @@ class FlowerColorTest {
     void testAllEnumValues() {
         for (FlowerColor color : FlowerColor.values()) {
             switch (color) {
-                case RED -> assertEquals("#FF0000", color.toString());
-                case BLUE -> assertEquals("#0000FF", color.toString());
-                default -> fail("Unexpected color: " + color);
+            case RED:
+                assertEquals("#FF0000", color.toString());
+                break;
+            case BLUE:
+                assertEquals("#0000FF", color.toString());
+                break;
+            default:
+                fail("Unexpected color: " + color);
             }
         }
     }
 }
-

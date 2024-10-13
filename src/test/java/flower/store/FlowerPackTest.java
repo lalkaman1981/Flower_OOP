@@ -25,12 +25,14 @@ class FlowerPackTest {
     @Test
     void testFlowerPackConstructor() {
         org.junit.jupiter.api.Assertions.assertNotNull(flowerPack.getFlower());
-        org.junit.jupiter.api.Assertions.assertEquals(INITIAL_QUANTITY, flowerPack.getQuantity());
+        org.junit.jupiter.api.Assertions.assertEquals(INITIAL_QUANTITY,
+                flowerPack.getQuantity());
     }
 
     @Test
     void testGetPrice() {
-        org.junit.jupiter.api.Assertions.assertEquals(EXPECTED_PRICE, flowerPack.getPrice(), DELTA);
+        org.junit.jupiter.api.Assertions.assertEquals(EXPECTED_PRICE,
+                flowerPack.getPrice(), DELTA);
     }
 
     @Test
@@ -39,13 +41,16 @@ class FlowerPackTest {
         newFlower.setPrice(NEW_FLOWER_PRICE);
 
         flowerPack.setFlower(newFlower);
-        org.junit.jupiter.api.Assertions.assertEquals(newFlower, flowerPack.getFlower());
-        org.junit.jupiter.api.Assertions.assertEquals(NEW_FLOWER_PRICE, flowerPack.getFlower().getPrice(), DELTA);
+        org.junit.jupiter.api.Assertions.assertEquals(newFlower,
+                flowerPack.getFlower());
+        org.junit.jupiter.api.Assertions.assertEquals(NEW_FLOWER_PRICE,
+                flowerPack.getFlower().getPrice(), DELTA);
     }
 
     @Test
     void testSetQuantity() {
         flowerPack.setQuantity(QUANTITY);
-        org.junit.jupiter.api.Assertions.assertEquals(QUANTITY, flowerPack.getQuantity());
+        org.junit.jupiter.api.Assertions.assertEquals(QUANTITY,
+                flowerPack.getQuantity());
     }
 }
