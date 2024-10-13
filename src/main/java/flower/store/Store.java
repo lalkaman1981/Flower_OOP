@@ -80,7 +80,8 @@ public class Store {
         }
 
         public void setItemMap(
-                        Map<Class<? extends ShopItem>, 
+                        Map<Class<
+                        ? extends ShopItem>, 
                         List<ShopItem>> newItemMap) {
                 this.itemMap = newItemMap;
         }
