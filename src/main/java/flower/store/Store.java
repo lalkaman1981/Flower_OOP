@@ -9,11 +9,13 @@ import java.util.Map;
 import java.util.Set;
 
 public class Store {
-        private Map<Class<? extends ShopItem>, 
+        private Map<Class<
+        ? extends ShopItem>, 
         List<ShopItem>> itemMap = new HashMap<>();
 
         public void add(ShopItem item) {
-                Class<? extends ShopItem> itemType = item
+                Class<
+                ? extends ShopItem> itemType = item
                                 .getClass();
                 itemMap.putIfAbsent(
                                 itemType,
@@ -51,7 +53,8 @@ public class Store {
 
         private void simpleSearch(
                         List<ShopItem> items,
-                        Class<? extends ShopItem> cls) {
+                        Class<
+                        ? extends ShopItem> cls) {
                 List<ShopItem> flowers = itemMap
                                 .get(cls);
                 if (flowers != null) {
@@ -75,7 +78,8 @@ public class Store {
                 return uniqueWords;
         }
 
-        public Map<Class<? extends ShopItem>, List<ShopItem>> getItemMap() {
+        public Map<Class<
+        ? extends ShopItem>, List<ShopItem>> getItemMap() {
                 return itemMap;
         }
 
