@@ -45,16 +45,15 @@ public class Store {
                 items.add(flower);
             }
         } else {
-            System.out.println("No items found for the class: " + cls.getSimpleName());
+            System.out.println("No items found for the class: " +
+                    cls.getSimpleName());
         }
     }
 
     private Set<String> uniqueWords(String words) {
         String[] splitted = words.split(" ");
         Set<String> uniqueWords = new HashSet<>();
-
         uniqueWords.addAll(Arrays.asList(splitted));
-
         return uniqueWords;
     }
 
@@ -62,7 +61,7 @@ public class Store {
         return itemMap;
     }
 
-    public void setItemMap(Map<Class<? extends ShopItem>, List<ShopItem>> itemMap) {
-        this.itemMap = itemMap;
+    public void setItemMap(Map<Class<? extends ShopItem>, List<ShopItem>> newItemMap) {
+        this.itemMap = newItemMap;
     }
 }
