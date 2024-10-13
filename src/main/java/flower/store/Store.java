@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Store {
-        private Map<Class< ? extends ShopItem>, 
+        private Map<Class<? extends ShopItem>, 
         List<ShopItem>> itemMap = new HashMap<>();
 
         public void add(ShopItem item) {
@@ -80,7 +80,8 @@ public class Store {
         }
 
         public void setItemMap(
-                        Map<Class<? extends ShopItem>, List<ShopItem>> newItemMap) {
+                        Map<Class<? extends ShopItem>, 
+                        List<ShopItem>> newItemMap) {
                 this.itemMap = newItemMap;
         }
 }
