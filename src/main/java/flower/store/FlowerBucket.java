@@ -3,7 +3,7 @@ package flower.store;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlowerBucket extends ShopItem{
+public class FlowerBucket extends ShopItem {
     private final List<FlowerPack> flowerPacks;
 
     public FlowerBucket() {
