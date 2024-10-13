@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Flower extends ShopItem{
+public class Flower extends ShopItem {
     private double sepalLength;
     private FlowerColor color;
     private double price;
