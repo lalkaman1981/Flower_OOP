@@ -9,7 +9,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Store {
-        private Map<Class<? extends ShopItem>, List<ShopItem>> itemMap = new HashMap<>();
+        private Map<Class< ? extends ShopItem>, 
+        List<ShopItem>> itemMap = new HashMap<>();
 
         public void add(ShopItem item) {
                 Class<? extends ShopItem> itemType = item
