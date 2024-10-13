@@ -9,13 +9,16 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Flower extends ShopItem {
+public class Flower
+        extends
+        ShopItem {
     private double sepalLength;
     private FlowerColor color;
     private double price;
     private FlowerType flowerType;
 
-    public Flower(Flower flower) {
+    public Flower(
+            Flower flower) {
         sepalLength = flower.sepalLength;
         color = flower.color;
         price = flower.price;
@@ -23,6 +26,7 @@ public class Flower extends ShopItem {
     }
 
     public String getColor() {
-        return color.toString();
+        return color
+                .toString();
     }
 }

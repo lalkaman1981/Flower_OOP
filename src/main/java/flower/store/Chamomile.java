@@ -1,5 +1,7 @@
 package flower.store;
 
-public class Chamomile extends Flower {
+public class Chamomile
+        extends
+        Flower {
 
 }

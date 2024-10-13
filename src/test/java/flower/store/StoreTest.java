@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
 
 class StoreTest {
 
@@ -19,58 +19,119 @@ class StoreTest {
         store = new Store();
         flower = new Flower();
         double price = 10.0;
-        flower.setPrice(price);
+        flower.setPrice(
+                price);
 
-        flowerPack = new FlowerPack(flower, 5);
+        flowerPack = new FlowerPack(
+                flower,
+                5);
         flowerBucket = new FlowerBucket();
 
-        store.add(flower);
-        store.add(flowerPack);
-        store.add(flowerBucket);
+        store.add(
+                flower);
+        store.add(
+                flowerPack);
+        store.add(
+                flowerBucket);
     }
 
     @Test
     void testAddItemsToStore() {
-        List<ShopItem> flowers = store.search("flower");
-        assertEquals(1, flowers.size());
-        assertEquals(flower, flowers.get(0));
+        List<ShopItem> flowers = store
+                .search("flower");
+        Assertions
+                .assertEquals(
+                        1,
+                        flowers.size());
+        Assertions
+                .assertEquals(
+                        flower,
+                        flowers.get(
+                                0));
 
-        List<ShopItem> packs = store.search("pack");
-        assertEquals(1, packs.size());
-        assertEquals(flowerPack, packs.get(0));
+        List<ShopItem> packs = store
+                .search("pack");
+        Assertions
+                .assertEquals(
+                        1,
+                        packs.size());
+        Assertions
+                .assertEquals(
+                        flowerPack,
+                        packs.get(
+                                0));
 
-        List<ShopItem> buckets = store.search("bucket");
-        assertEquals(1, buckets.size());
-        assertEquals(flowerBucket, buckets.get(0));
+        List<ShopItem> buckets = store
+                .search("bucket");
+        Assertions
+                .assertEquals(
+                        1,
+                        buckets.size());
+        Assertions
+                .assertEquals(
+                        flowerBucket,
+                        buckets.get(
+                                0));
     }
 
     @Test
     void testSearchByMultipleKeywords() {
-        List<ShopItem> items = store.search("flower pack");
-        assertEquals(2, items.size());
-        assertTrue(items.contains(flower));
-        assertTrue(items.contains(flowerPack));
+        List<ShopItem> items = store
+                .search("flower pack");
+        Assertions
+                .assertEquals(
+                        2,
+                        items.size());
+        Assertions
+                .assertTrue(
+                        items.contains(
+                                flower));
+        Assertions
+                .assertTrue(
+                        items.contains(
+                                flowerPack));
     }
 
     @Test
     void testSearchWithUnknownKeyword() {
-        List<ShopItem> items = store.search("unknown");
-        assertTrue(items.isEmpty());
+        List<ShopItem> items = store
+                .search("unknown");
+        Assertions
+                .assertTrue(
+                        items.isEmpty());
     }
 
     @Test
     void testUniqueWords() {
-        List<ShopItem> items = store.search("flower flower flower");
-        assertEquals(1, items.size());
-        assertEquals(flower, items.get(0));
+        List<ShopItem> items = store
+                .search("flower flower flower");
+        Assertions
+                .assertEquals(
+                        1,
+                        items.size());
+        Assertions
+                .assertEquals(
+                        flower,
+                        items.get(
+                                0));
     }
 
     @Test
     void testSearchCaseInsensitive() {
-        List<ShopItem> items = store.search("Flower PaCk");
+        List<ShopItem> items = store
+                .search("Flower PaCk");
         int exp = 2;
-        assertEquals(exp, items.size());
-        assertTrue(items.contains(flower));
-        assertTrue(items.contains(flowerPack));
+        Assertions
+                .assertEquals(
+                        exp,
+                        items.size());
+        Assertions
+                .assertTrue(
+                        items.contains(
+                                flower));
+        Assertions
+                .assertTrue(
+                        items.contains(
+                                flowerPack));
     }
 }

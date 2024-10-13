@@ -2,11 +2,13 @@ package flower.store;
 
 public enum FlowerColor {
 
-    RED("#FF0000"), BLUE("#0000FF");
+    RED("#FF0000"),
+    BLUE("#0000FF");
 
     private final String stringRepresentation;
 
-    FlowerColor(String stringRepresentation) {
+    FlowerColor(
+            String stringRepresentation) {
         this.stringRepresentation = stringRepresentation;
     }
 
