@@ -13,7 +13,8 @@ class FlowerPackTest {
     void setUp() {
 
         flower = new Flower();
-        flower.setPrice(10.0);
+        double price = 10.0;
+        flower.setPrice(price);
         flowerPack = new FlowerPack(flower, 5);
     }
 
@@ -21,19 +22,22 @@ class FlowerPackTest {
     void testFlowerPackConstructor() {
 
         assertNotNull(flowerPack.getFlower());
-        assertEquals(5, flowerPack.getQuantity());
+        int exp = 5;
+        assertEquals(exp, flowerPack.getQuantity());
     }
 
     @Test
     void testGetPrice() {
-        assertEquals(50.0, flowerPack.getPrice(), 0.001);
+        double exp = 50.0, delta = 0.001;
+        assertEquals(exp, flowerPack.getPrice(), delta);
     }
 
     @Test
     void testSetFlower() {
 
         Flower newFlower = new Flower();
-        newFlower.setPrice(15.0);
+        double price = 15.0;
+        newFlower.setPrice(price);
 
         flowerPack.setFlower(newFlower);
         assertEquals(newFlower, flowerPack.getFlower());
@@ -42,7 +46,8 @@ class FlowerPackTest {
 
     @Test
     void testSetQuantity() {
-        flowerPack.setQuantity(10);
-        assertEquals(10, flowerPack.getQuantity());
+        int quantity = 10, exp = 10;
+        flowerPack.setQuantity(quantity);
+        assertEquals(exp, flowerPack.getQuantity());
     }
 }

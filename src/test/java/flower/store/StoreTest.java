@@ -18,7 +18,8 @@ class StoreTest {
     void setUp() {
         store = new Store();
         flower = new Flower();
-        flower.setPrice(10.0);
+        double price = 10.0;
+        flower.setPrice(price);
 
         flowerPack = new FlowerPack(flower, 5);
         flowerBucket = new FlowerBucket();
@@ -67,7 +68,8 @@ class StoreTest {
     @Test
     void testSearchCaseInsensitive() {
         List<ShopItem> items = store.search("Flower PaCk");
-        assertEquals(2, items.size());
+        int exp = 2;
+        assertEquals(exp, items.size());
         assertTrue(items.contains(flower));
         assertTrue(items.contains(flowerPack));
     }
