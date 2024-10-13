@@ -9,11 +9,18 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Flower {
+public class Flower extends ShopItem{
     private double sepalLength;
     private FlowerColor color;
     private double price;
     private FlowerType flowerType;
+
+    public Flower(Flower flower) {
+        sepalLength = flower.sepalLength;
+        color = flower.color;
+        price = flower.price;
+        flowerType = flower.flowerType;
+    }
 
     public String getColor() {
         return color.toString();
