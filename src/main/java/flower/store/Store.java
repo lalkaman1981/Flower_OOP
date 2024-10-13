@@ -34,18 +34,24 @@ public class Store {
                 for (String word : words) {
                         lower = word.toLowerCase();
                         switch (lower) {
-                        case "flower" -> simpleSearch(
-                                        items,
+                        case "flower":
+                                simpleSearch(items,
                                         Flower.class);
-                        case "bucket", "flowerbucket" -> simpleSearch(
-                                        items,
+                                break;
+                        case "bucket":
+                        case "flowerbucket":
+                                simpleSearch(items,
                                         FlowerBucket.class);
-                        case "pack", "flowerpack" -> simpleSearch(
-                                        items,
+                                break;
+                        case "pack":
+                        case "flowerpack":
+                                simpleSearch(items,
                                         FlowerPack.class);
-                        default -> {
+                                break;
+                        default:
+                                break;
                         }
-                        }
+
                 }
 
                 return items;
@@ -63,8 +69,8 @@ public class Store {
                         }
                 } else {
                         System.out.println(
-                                        "No items found for the class: "
-                                                        + cls.getSimpleName());
+                "No items found for the class: "
+                 + cls.getSimpleName());
                 }
         }
 
@@ -79,14 +85,13 @@ public class Store {
         }
 
         public Map<Class<
-        ? extends ShopItem>, List<ShopItem>> getItemMap() {
+        ? extends ShopItem>,List<ShopItem>> getItemMap() {
                 return itemMap;
         }
 
         public void setItemMap(
-                        Map<Class<
-                        ? extends ShopItem>, 
-                        List<ShopItem>> newItemMap) {
+                Map<Class<
+                ? extends ShopItem>, List<ShopItem>> newItemMap) {
                 this.itemMap = newItemMap;
         }
 }
